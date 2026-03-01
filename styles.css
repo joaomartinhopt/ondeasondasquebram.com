@@ -244,55 +244,65 @@ a {
 .hero-presents {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 1.75rem;
-  letter-spacing: 0.25em;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
   color: rgba(255,255,255,0.90);
   text-transform: none;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Wrapper that constrains logo + subtitle + byline to the same width */
+.hero-logo-block {
+  display: flex;
+  flex-direction: column;
+  width: min(430px, 62vw);
+  gap: 0.05rem;
 }
 
 /* Logo image — already white PNG, no filter needed */
 .hero-logo {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.15rem;
 }
 
 .hero-logo-img {
-  width: min(430px, 62vw);
+  width: 100%; /* fills hero-logo-block width */
   height: auto;
 }
 
-/* "WHERE THE WAVES BREAK" */
+/* "WHERE THE WAVES BREAK" — right-aligned to logo */
 .hero-subtitle {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 1.75rem;
-  letter-spacing: 0.01em;
+  font-size: 1.0rem;
+  letter-spacing: 0.02em;
   color: rgba(255,255,255,0.85);
   text-transform: uppercase;
+  text-align: right;
   margin-top: 0;
 }
 
-/* "um filme de Inara Chayamiti" */
+/* "um filme de Inara Chayamiti" — right-aligned to logo */
 .hero-byline {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 1.75rem;
-  letter-spacing: 0.25em;
+  font-size: 1.0rem;
+  letter-spacing: 0.1em;
   color: rgba(255,255,255,0.90);
-  margin-bottom: 1.2rem;
+  text-align: right;
+  margin-bottom: 0;
 }
 
-/* Laurels — two rows stacked */
+/* Laurels — larger, tighter gap to byline */
 .hero-laurels {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
   align-items: center;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
 }
 
 .laurels-img {
-  width: min(640px, 86vw);
+  width: min(760px, 92vw);
   height: auto;
   opacity: 0.92;
 }
@@ -404,10 +414,10 @@ a {
 
 .film-details p {
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.68);
+  font-weight: 500;
+  font-size: 0.96rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.92);
 }
 
 .film-links a {
@@ -443,9 +453,7 @@ a {
   width: 100%;
   max-width: 460px;
   padding-bottom: 133%; /* portrait 3:4 ratio */
-  border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
 }
 
 .rent-vimeo-frases {
@@ -553,7 +561,7 @@ a {
 }
 
 .sinopse-overlay {
-  background: rgba(200, 195, 190, 0.12);
+  background: rgba(12, 18, 40, 0.62);
 }
 
 .sinopse-lead {
@@ -578,7 +586,7 @@ a {
 .sinopse-text p {
   font-size: 0.93rem;
   line-height: 1.9;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,0.93);
   margin-bottom: 1.1rem;
 }
 
@@ -703,15 +711,25 @@ a {
   opacity: 0.9;
 }
 
-/* Event photos */
+/* Event photos — stacked Wix images, no borders */
 .events-photos {
   margin: 0 auto 2rem;
   max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .events-photos img {
   width: 100%;
-  border-radius: 2px;
+  display: block;
+}
+
+/* Smaller standalone photo (the PNG) — auto-size, centered */
+.events-photo-small {
+  width: auto !important;
+  max-width: 60%;
+  align-self: center;
 }
 
 /* Flyers grid */
@@ -801,8 +819,26 @@ a {
 
 .impacto-media-row img {
   width: 100%;
-  border-radius: 2px;
 }
+
+/* Three society images side by side, proportional to natural widths 242:602:642 */
+.impacto-society-imgs {
+  display: flex;
+  gap: 0.3rem;
+  max-width: 860px;
+  margin: 2.5rem auto 0;
+  align-items: flex-start;
+}
+
+.impacto-society-imgs img {
+  display: block;
+  height: auto;
+  min-width: 0;
+}
+
+.impacto-society-imgs img:nth-child(1) { flex: 242 1 0%; }
+.impacto-society-imgs img:nth-child(2) { flex: 602 1 0%; }
+.impacto-society-imgs img:nth-child(3) { flex: 642 1 0%; }
 
 /* Society impact cards */
 .impacto-cards {
@@ -1094,6 +1130,17 @@ a {
   padding: 0 2rem;
 }
 
+.footer-mailto {
+  color: rgba(255,255,255,0.65);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+
+.footer-mailto:hover {
+  color: rgba(255,255,255,0.95);
+}
+
 /* ============================================================
    ANIMATIONS
    ============================================================ */
@@ -1215,22 +1262,22 @@ a {
   }
 
   /* Hero */
-  .hero-logo-img {
+  .hero-logo-block {
     width: min(380px, 85vw);
   }
 
   .hero-presents {
-    font-size: 1.1rem;
-    letter-spacing: 0.18em;
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
   }
 
   .hero-byline {
-    font-size: 1.1rem;
-    letter-spacing: 0.18em;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
   }
 
   /* Rent — keep starburst large at mobile using vw */
@@ -1266,12 +1313,12 @@ a {
     letter-spacing: 0.2em;
   }
 
-  .hero-logo-img {
+  .hero-logo-block {
     width: min(300px, 90vw);
   }
 
   .laurels-img {
-    width: min(340px, 92vw);
+    width: min(360px, 94vw);
   }
 
   .sinopse-lead {
