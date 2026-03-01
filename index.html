@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onde as Ondas Quebram</title>
+  <meta name="description" content="Onde as Ondas Quebram (Where the Waves Break) — O primeiro longa-metragem documental dirigido por uma mulher nipo-brasileira. Um filme de Inara Chayamiti.">
+  <meta property="og:title" content="Onde as Ondas Quebram — Um filme de Inara Chayamiti">
+  <meta property="og:image" content="assets/images/wix/OOQ_poster_PT_baixa.jpg">
+  <link rel="icon" href="assets/images/wix/favcon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <a href="https://www.instagram.com/ondeasondasquebramfilme/" target="_blank" rel="noopener" class="nav-social">
+        <img src="assets/images/instagram-icon.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/ondeasondasquebram" target="_blank" rel="noopener" class="nav-social">
+        <img src="assets/images/facebook-icon.png" alt="Facebook">
+      </a>
+    </div>
+    <div class="nav-center">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#trailer" class="nav-link">TRAILER</a></li>
+        <li><a href="#sinopse" class="nav-link">SINOPSE</a></li>
+        <li><a href="#exibicoes" class="nav-link">EXIBIÇÕES E EVENTOS</a></li>
+        <li><a href="#impacto" class="nav-link">IMPACTO</a></li>
+        <li><a href="#apoio" class="nav-link">APOIO</a></li>
+        <li><a href="#equipe" class="nav-link">EQUIPE</a></li>
+        <li><a href="#midia" class="nav-link">MÍDIA</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="lang-btn active" data-lang="pt"><img src="https://static.parastorage.com/services/linguist-flags/1.969.0/assets/flags/round/BRA.png" alt="PT" class="flag"> PT</a>
+      <span class="lang-sep">|</span>
+      <a href="#" class="lang-btn" data-lang="en"><img src="https://static.parastorage.com/services/linguist-flags/1.969.0/assets/flags/round/USA.png" alt="EN" class="flag"> EN</a>
+    </div>
+  </nav>
+
+  <!-- HERO + RENT: partilham o mesmo fundo fixo -->
+  <div class="hero-rent-container">
+    <!-- Fundo único fixo — cobre Hero e Rent -->
+    <div class="hero-rent-bg">
+      <img src="assets/images/wix/where-is-nihon-13.jpg" alt="" class="bg-img">
+    </div>
+    <div class="hero-rent-overlay"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-presents" data-pt="Bonde e Chayamiti apresentam" data-en="Bonde e Chayamiti present">Bonde e Chayamiti apresentam</p>
+      <div class="hero-logo">
+        <img src="assets/images/wix/OOQ_logo_branco.png" alt="Onde as Ondas Quebram" class="hero-logo-img">
+      </div>
+      <p class="hero-subtitle">WHERE THE WAVES BREAK</p>
+      <p class="hero-byline" data-pt="um filme de Inara Chayamiti" data-en="a film by Inara Chayamiti">um filme de Inara Chayamiti</p>
+      <div class="hero-laurels">
+        <img src="assets/images/wix/louros-b.png" alt="Festival selections" class="laurels-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- RENT / VOD — mesmo fundo fixo do Hero -->
+  <section class="rent-section" id="rent">
+    <div class="container rent-grid">
+      <div class="rent-left">
+        <div class="rent-starburst-wrap">
+          <div class="rent-starburst">
+            <!-- Exact SVG scalloped shape from original site -->
+            <svg class="rent-starburst-svg" viewBox="20 20 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M178.301 116.439l-8.246 5.784 3.402 9.481-8.878 3.872 1.469 9.576-9.831 2.189-.485 10.062-9.685.181-2.306 9.409-9.921-1.74-4.295 9.104-9.017-3.538-5.73 7.809-8.499-5.402L98.826 180l-6.977-6.721-8.282 5.024-5.787-8.248-9.481 3.405-3.874-8.88-9.574 1.473-2.19-9.831-10.061-.485-.18-9.684-9.41-2.306 1.74-9.92-9.112-4.297 3.54-9.019-7.812-5.73 5.405-8.501L20 98.822l6.722-6.975-5.024-8.285 8.245-5.783-3.404-9.478 8.88-3.873-1.473-9.575 9.831-2.189.483-10.064 9.686-.18 2.305-9.411 9.923 1.741 4.298-9.109 9.016 3.539 5.731-7.81 8.5 5.403L101.174 20l6.977 6.722 8.283-5.024 5.785 8.246 9.48-3.402 3.873 8.878 9.574-1.47 2.19 9.829 10.059.484.181 9.685 9.409 2.305-1.739 9.923 9.112 4.299-3.539 9.018 7.81 5.73-5.403 8.501 6.774 7.457-6.723 6.976 5.024 8.282z" fill="#c990a3"/>
+            </svg>
+            <div class="rent-starburst-content">
+              <p class="rent-word" data-pt="ALUGUE" data-en="RENT">ALUGUE</p>
+              <p class="rent-word">RENT</p>
+              <p class="rent-word rent-jp">レンタル</p>
+              <a href="https://vimeo.com/ondemand/ondas" target="_blank" rel="noopener" class="rent-vimeo-link">vimeo.com/ondemand/ondas</a>
+            </div>
+          </div>
+        </div>
+        <div class="rent-info">
+          <div class="film-details">
+            <p data-pt="documentário  |  Brasil  |  2024  |  85 min" data-en="documentary  |  Brazil  |  2024  |  85 min">documentário  |  Brasil  |  2024  |  85 min</p>
+            <p>4k  |  16:9  |  português  |  cor</p>
+            <p class="film-links"><a href="https://www.imdb.com/title/tt31113776/" target="_blank" rel="noopener">IMDb</a> &nbsp;|&nbsp; <a href="https://letterboxd.com/film/onde-as-ondas-quebram/" target="_blank" rel="noopener">Letterboxd</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="rent-right">
+        <div class="rent-vimeo-wrap">
+          <iframe class="rent-vimeo-frases"
+            src="https://player.vimeo.com/video/1132806823?background=1&autoplay=1&loop=1&muted=1"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /hero-rent-container -->
+
+  <!-- TRAILER -->
+  <section class="section trailer-section" id="trailer">
+    <div class="trailer-bg">
+      <img src="assets/images/wix/screenshot-2023.png" alt="" class="bg-img">
+    </div>
+    <div class="section-overlay"></div>
+    <div class="container">
+      <h2 class="section-heading">TRAILER</h2>
+      <div class="heading-line"></div>
+      <div class="trailer-wrapper">
+        <div class="trailer-embed">
+          <iframe src="https://player.vimeo.com/video/821072515?title=0&byline=0&portrait=0" title="Onde as Ondas Quebram — Trailer Oficial" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINOPSE -->
+  <section class="section sinopse-section" id="sinopse">
+    <div class="sinopse-bg">
+      <img src="assets/images/wix/monte-fuji.jpg" alt="" class="bg-img">
+    </div>
+    <div class="section-overlay sinopse-overlay"></div>
+    <div class="container">
+      <h2 class="section-heading">SINOPSE</h2>
+      <div class="heading-line"></div>
+
+      <p class="sinopse-lead" data-pt="Como na arte japonesa de reparar cerâmicas com ouro, a documentarista Inara Chayamiti busca sua identidade fragmentada colando peças da história de sua família, marcada por duas diásporas entre lados opostos do mundo: Brasil e Japão." data-en="As in the Japanese art of repairing ceramics with gold, the filmmaker Inara Chayamiti searches for her fragmented identity by gluing pieces of her family story, marked by two diasporas between opposite sides of the world: Brazil and Japan.">Como na arte japonesa de reparar cerâmicas com ouro, a documentarista Inara Chayamiti busca sua identidade fragmentada colando peças da história de sua família, marcada por duas diásporas entre lados opostos do mundo: Brasil e Japão.</p>
+
+      <div class="sinopse-grid">
+        <div class="sinopse-text" data-lang-block="pt">
+          <p>Quando a documentarista Inara Chayamiti migra do Brasil para os Países Baixos, descobre-se estrangeira em sua própria terra natal. Ela, que se considerava uma típica brasileira no caldeirão do país, percebe agora o seu não-lugar: vista como japonesa demais no Brasil e nada japonesa no Japão. Começa então a buscar sua identidade fragmentada investigando a história de sua família.</p>
+          <p>Como na arte japonesa de reparar cerâmicas com ouro, ela cola peças dessa história marcada por duas diásporas entre lados opostos do mundo: Brasil e Japão. Ao usar ouro em sua cola, o <em>kintsugi</em> valoriza a imperfeição e a história de cada peça.</p>
+          <p>Por considerar-se brasileiro, o pai de Inara rompeu com tradições japonesas e até mesmo casou-se com a mãe de Inara, uma "gaijin" ("estrangeira") para a decepção de sua família. Sua <em>batchan</em> (avó), nascida no Brasil, define-se como japonesa sem titubear. Seus tios vivem no Japão há 30 anos enquanto brasileiros. E apesar de suas primas terem nascido lá, elas são brasileiras que só conhecem o Japão.</p>
+          <p>Afinal, o que torna uma pessoa brasileira, japonesa ou de qualquer lugar? Nascer em um lugar ou em outro? Crescer lá ou aqui? Entender sua cultura e língua? Amar um lugar? E o que significa ser vista como amarela? Como foi isso para seus bisavós e avós?</p>
+          <p>Em sua jornada por respostas, ela percebe o quanto desconhece as memórias familiares e a história coletiva. Descobre que sua <em>batchan</em>, aos seis anos de idade, estava entre milhares de japoneses e descendentes que perderam tudo por serem vistos como inimigos no Brasil durante a Segunda Guerra. Porém, ela descobre que essa hostilização, na forma de racismo e xenofobia, já ocorria muito antes da guerra.</p>
+          <p>Como entender essas histórias invisibilizadas a partir da perspectiva de hoje e trazer mais peças para o <em>kintsugi</em> da própria brasilidade?</p>
+        </div>
+        <div class="sinopse-text" data-lang-block="en" style="display:none;">
+          <p>When documentary filmmaker Inara Chayamiti migrates from Brazil to the Netherlands, she finds herself a foreigner in her own homeland. She, who considered herself a typical Brazilian in the country's melting pot, now realizes her non-place: seen as too Japanese in Brazil and not Japanese at all in Japan. So she begins to search for her fragmented identity while investigating her family story.</p>
+          <p>As in the Japanese art of repairing ceramics with gold, she glues together pieces of this story marked by two diasporas between opposite sides of the world: Brazil and Japan. By using gold in its glue, <em>kintsugi</em> values imperfection and the history of each piece.</p>
+          <p>Considering himself Brazilian, Inara's father broke with Japanese traditions and even married her Brazilian mother, a "gaijin" ("foreigner"), to his family's disappointment. Her <em>batchan</em> (grandmother), born in Brazil, defines herself as Japanese without hesitation.</p>
+          <p>In this first feature-length documentary directed by a Japanese-Brazilian woman, she builds generational and cultural bridges from an authentic point of view and a curious and affective quest. And by revisiting the past from erased angles, she tells invisible stories from her community.</p>
+        </div>
+        <div class="sinopse-poster">
+          <div class="poster-carousel">
+            <img src="assets/images/wix/OOQ_poster_PT_baixa.jpg" alt="Poster Onde as Ondas Quebram" id="sinopse-poster-img" class="poster-active">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXIBIÇÕES E EVENTOS -->
+  <section class="section exibicoes-section" id="exibicoes">
+    <div class="exibicoes-bg">
+      <img src="assets/images/wix/screenshot-2023.png" alt="" class="bg-img">
+    </div>
+    <div class="section-overlay exibicoes-overlay"></div>
+    <div class="container">
+      <h2 class="section-heading" data-pt="EXIBIÇÕES E EVENTOS" data-en="SCREENINGS &amp; EVENTS">EXIBIÇÕES E EVENTOS</h2>
+      <div class="heading-line"></div>
+
+      <div class="stats-row">
+        <p data-pt="24 cidades de 5 países 🇧🇷🇯🇵🇺🇸🇵🇹🇨🇦" data-en="24 cities in 5 countries 🇧🇷🇯🇵🇺🇸🇵🇹🇨🇦">24 cidades de 5 países 🇧🇷🇯🇵🇺🇸🇵🇹🇨🇦</p>
+        <p data-pt="28 eventos, sendo 6 festivais" data-en="28 events, 6 of which were festivals">28 eventos, sendo 6 festivais</p>
+        <p data-pt="31 convidados debatedores de diversas áreas do conhecimento" data-en="31 guest speakers from different areas of knowledge">31 convidados debatedores de diversas áreas do conhecimento</p>
+      </div>
+
+      <h3 class="sub-heading" data-pt="Festivais" data-en="Festivals">Festivais</h3>
+      <div class="event-list">
+        <p><strong>EUA, 2024 Mar</strong> — DisOrient Asian American Film Festival of Oregon, Eugene - OR</p>
+        <p><strong>Brasil, 2024 Jun</strong> — 47º Festival Guarnicê de Cinema, São Luís - MA</p>
+        <p><strong>Brasil, 2024 Jun</strong> — 10º Santos Film Fest, Mostra Nacional Competitiva, Santos - SP</p>
+        <p><strong>Brasil, 2025 Ago</strong> — 1º Festival Internacional Goitacá de Cinema, Mostra Competitiva Zezé Motta, Campos dos Goytacazes - RJ</p>
+        <p><strong>Canadá, 2025 Set</strong> — 14th Toronto Japanese Film Festival, Special Screening, Toronto - ON</p>
+        <p><strong>Portugal, 2025 Out</strong> — 35º Encontros da Imagem — Festival Internacional de Fotografia e Artes Visuais, Braga</p>
+      </div>
+
+      <h3 class="sub-heading" data-pt="Eventos" data-en="Events">Eventos</h3>
+      <div class="event-list">
+        <p><strong>Brasil, 2023</strong> — Circuito de pré-lançamento de impacto (ver abaixo)</p>
+        <p><strong>EUA, 2023</strong> — Avaliação de impacto do filme apresentada na Conferência Anual da Associação Americana de Avaliação</p>
+        <p><strong>Japão, 2024</strong> — Apresentação sobre o filme na 64ª Convenção dos Nikkeis e Japoneses no Exterior, em Tóquio</p>
+        <p><strong>Brasil, 2024</strong> — Apresentação sobre o filme no II Fórum WaKai — Raízes e Identidade na PUCRS</p>
+        <p><strong>Portugal, 2024</strong> — Cine-debate com alunos de Estudos Fílmicos da Universidade de Coimbra</p>
+        <p><strong>Portugal, 2025</strong> — Avaliação de impacto do filme apresentada no Congresso Internacional do MigraMediaActs da Universidade do Minho</p>
+        <p><strong>Portugal, 2025</strong> — Exibição do filme no Congresso Internacional do MigraMediaActs da Universidade do Minho</p>
+        <p><strong>Portugal, 2025</strong> — Cine-debate no Batalha Centro de Cinema organizado pelo GT Cultura Visual da SOPCOM — Associação Portuguesa de Ciências da Comunicação</p>
+        <p><strong>Japão, 2025</strong> — Exibição do filme na JBI — Japan Business International, em Hamamatsu</p>
+        <p><strong>Japão, 2025</strong> — Três exibições no Pavilhão do Brasil na Expo Osaka</p>
+        <p><strong>Japão, 2025</strong> — Lançamento mundial no Museu da Emigração e Centro de Intercâmbio Cultural de Kobe</p>
+        <p><strong>Portugal, 2025</strong> — Cine-debate no CinePagu, na Casa da Imagem</p>
+      </div>
+
+      <div class="events-photos">
+        <img src="assets/images/events-photos.jpg" alt="Fotos dos eventos e exibições">
+      </div>
+
+      <!-- Circuito de Pré-lançamento -->
+      <div class="circuito-block">
+        <div class="circuito-text">
+          <h3 class="sub-heading circuito-heading" data-pt="Circuito de pré-lançamento de impacto" data-en="Impact Pre-launch Circuit">Circuito de pré-lançamento de impacto</h3>
+          <p data-pt="Cerca de 770 pessoas foram às 9 exibições gratuitas seguidas de debates e rodas de conversa em museus, espaços culturais, acadêmicos e comunitários, com 21 convidados* renomados. Marcamos os 115 anos da imigração japonesa no Brasil e os 80 anos da expulsão da comunidade do litoral paulista, durante a Segunda Guerra." data-en="About 770 people attended the 9 free screenings followed by debates and conversation circles in museums, cultural, academic and community spaces, with 21 renowned guests*. We marked the 115th anniversary of Japanese immigration to Brazil and the 80th anniversary of the expulsion of the coastal São Paulo community during WWII.">Cerca de 770 pessoas foram às 9 exibições gratuitas seguidas de debates e rodas de conversa em museus, espaços culturais, acadêmicos e comunitários, com 21 convidados* renomados. Marcamos os 115 anos da imigração japonesa no Brasil e os 80 anos da expulsão da comunidade do litoral paulista, durante a Segunda Guerra.</p>
+        </div>
+        <div class="circuito-mapa">
+          <img src="assets/images/wix/OOQ-mapa.jpeg" alt="Mapa do Circuito de Pré-lançamento de Impacto — Brasil 2023">
+        </div>
+      </div>
+
+      <div class="debatedores">
+        <p><strong data-pt="*Convidados debatedores e mediadores:" data-en="*Guest speakers and moderators:">*Convidados debatedores e mediadores:</strong> Jorge J. Okubaro, Laís Miwa Higa, Beatriz Diaféria, Henrique Trindade, Vivian Makia, Leiko Matsubara Morales, Seth Jacobowitz, Aline Yuri Hasegawa, Almir Almas, Olga Futemma, Luana Tanaka, Bruna Tukamoto, Rogério Ivano, Richard Gonçalves André, Larissa Ayumi Sato, Luana Ueno, Paula Sayuri Yanagiwara, Victor Hugo Kebbe, Luiz Puntel, Sadao Nakai, Márcia Okida</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACTO -->
+  <section class="section impacto-section" id="impacto">
+    <div class="impacto-bg">
+      <img src="assets/images/wix/di-cafe-1.jpg" alt="" class="bg-img">
+    </div>
+    <div class="section-overlay impacto-overlay"></div>
+    <div class="container">
+      <h2 class="section-heading">IMPACTO</h2>
+      <div class="heading-line"></div>
+
+      <h3 class="sub-heading" data-pt="Impacto no público" data-en="Impact on the audience">Impacto no público</h3>
+
+      <div class="impacto-stats">
+        <div class="impacto-col">
+          <h4 class="impacto-cat" data-pt="Conhecimento" data-en="Knowledge">Conhecimento</h4>
+          <p class="impacto-text" data-pt="A grande maioria do público (82%) afirmou que aprendeu algo novo sobre a história do Brasil, sendo que desses, todos os que citaram um ou mais eventos específicos (20%) mencionaram a expulsão da comunidade do litoral do Estado de São Paulo." data-en="The vast majority of the audience (82%) stated they learned something new about the history of Brazil, and of these, all who cited specific events mentioned the expulsion of the coastal São Paulo community.">A grande maioria do público (82%) afirmou que aprendeu algo novo sobre a história do Brasil, sendo que desses, todos os que citaram um ou mais eventos específicos (20%) mencionaram a expulsão da comunidade do litoral do Estado de São Paulo.</p>
+          <p class="impacto-text" data-pt="E muitos participantes (28%) disseram ter ficado chocados com o nível de preconceito e perseguição à comunidade japonesa presente nos discursos políticos e artigos na imprensa da primeira metade do século XX." data-en="And many participants (28%) said they were shocked by the level of prejudice and persecution against the Japanese community in political discourse and press in the first half of the 20th century.">E muitos participantes (28%) disseram ter ficado chocados com o nível de preconceito e perseguição à comunidade japonesa presente nos discursos políticos e artigos na imprensa da primeira metade do século XX.</p>
+        </div>
+        <div class="impacto-col">
+          <h4 class="impacto-cat" data-pt="Empatia" data-en="Empathy">Empatia</h4>
+          <p class="impacto-text" data-pt="Uma parte significativa do público que não tinha ascendência asiática (38%) afirmou ter notado similaridades entre as experiências da comunidade nipo-brasileira com a sua comunidade também marcada por histórias de migrações, tanto de fora do Brasil como dentro do Brasil." data-en="A significant part of the audience without Asian heritage (38%) stated they noticed similarities between the experiences of the Japanese-Brazilian community and their own community also marked by migration histories.">Uma parte significativa do público que não tinha ascendência asiática (38%) afirmou ter notado similaridades entre as experiências da comunidade nipo-brasileira com a sua comunidade também marcada por histórias de migrações, tanto de fora do Brasil como dentro do Brasil.</p>
+          <h4 class="impacto-cat" data-pt="Empoderamento" data-en="Empowerment">Empoderamento</h4>
+          <p class="impacto-text" data-pt="Grande parte do público (77%) saiu da sessão com vontade de procurar mais informação sobre a história do Brasil, mas também sobre a história da própria família para aprender mais sobre a sua ancestralidade e identidade." data-en="A large part of the audience (77%) left the screening wanting to seek more information about the history of Brazil, as well as their own family history, to learn more about their ancestry and identity.">Grande parte do público (77%) saiu da sessão com vontade de procurar mais informação sobre a história do Brasil, mas também sobre a história da própria família para aprender mais sobre a sua ancestralidade e identidade.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-heading" data-pt="Impacto na sociedade" data-en="Impact on society">Impacto na sociedade</h3>
+
+      <div class="impacto-media-row">
+        <img src="assets/images/impact-videos.png" alt="Impacto na mídia — cobertura em vídeo">
+      </div>
+
+      <div class="impacto-cards">
+        <div class="impacto-card">
+          <h4 data-pt="Contribuiu para o pedido de desculpas do Estado brasileiro aos japoneses e seus descendentes pela perseguição na primeira metade do século XX" data-en="Contributed to the Brazilian state's apology to Japanese and their descendants for persecution in the first half of the 20th century">Contribuiu para o pedido de desculpas do Estado brasileiro aos japoneses e seus descendentes pela perseguição na primeira metade do século XX</h4>
+          <p data-pt="A Muribushi, publicação do Centro para Estudos Migratórios de Okinawa, incluiu recortes de jornais encontrados pela diretora do filme, ressaltando seu papel na descoberta de evidências que até então não eram conhecidas. Essas evidências foram depois apresentadas como parte do pedido de retratação do Estado brasileiro pela perseguição à comunidade japonesa, que foi aprovado unanimemente pela Comissão da Anistia em julho de 2024." data-en="Muribushi, a publication of the Okinawa Center for Migration Studies, included newspaper clippings found by the film's director. This evidence was later presented as part of the Brazilian state's apology request, unanimously approved by the Amnesty Commission in July 2024.">A Muribushi, publicação do Centro para Estudos Migratórios de Okinawa, incluiu recortes de jornais encontrados pela diretora do filme, ressaltando seu papel na descoberta de evidências que até então não eram conhecidas. Essas evidências foram depois apresentadas como parte do pedido de retratação do Estado brasileiro pela perseguição à comunidade japonesa, que foi aprovado unanimemente pela Comissão da Anistia em julho de 2024.</p>
+        </div>
+        <div class="impacto-card">
+          <h4 data-pt="Pautou e influenciou a narrativa na mídia de grande alcance local e nacional" data-en="Guided and influenced the narrative in local and national media with wide reach">Pautou e influenciou a narrativa na mídia de grande alcance local e nacional</h4>
+          <p data-pt="O circuito de pré-lançamento do filme influenciou a cobertura midiática do aniversário da imigração japonesa no Brasil, desafiando representações estereotipadas e enfatizando que nipo-brasileiros são brasileiros. Além disso, o circuito também trouxe visibilidade para um episódio pouco conhecido também marcado por uma efeméride no ano de 2023: os 80 anos da expulsão da comunidade do litoral paulista, durante a Segunda Guerra." data-en="The pre-launch circuit influenced media coverage of the anniversary of Japanese immigration to Brazil, challenging stereotyped representations. It also brought visibility to the 80th anniversary of the expulsion of the coastal São Paulo community during WWII.">O circuito de pré-lançamento do filme influenciou a cobertura midiática do aniversário da imigração japonesa no Brasil, desafiando representações estereotipadas e enfatizando que nipo-brasileiros são brasileiros. Além disso, o circuito também trouxe visibilidade para um episódio pouco conhecido também marcado por uma efeméride no ano de 2023: os 80 anos da expulsão da comunidade do litoral paulista, durante a Segunda Guerra.</p>
+        </div>
+      </div>
+
+      <div class="impacto-media-row">
+        <img src="assets/images/impact-society.png" alt="Impacto na sociedade — fotos">
+      </div>
+    </div>
+  </section>
+
+  <!-- APOIO -->
+  <section class="section apoio-section" id="apoio">
+    <div class="apoio-bg">
+      <img src="assets/images/wix/nuvem-fragmento.jpeg" alt="" class="bg-img">
+    </div>
+    <div class="section-overlay apoio-overlay"></div>
+    <div class="container">
+      <h2 class="section-heading">APOIO</h2>
+      <div class="heading-line"></div>
+      <ul class="apoio-list">
+        <li>Museu da Imigração do Estado de São Paulo</li>
+        <li>Museu Histórico de Londrina (acervo filmográfico de Hikoma Udihara)</li>
+        <li>Museu Histórico da Imigração Japonesa no Brasil</li>
+        <li>Bunkyo — Sociedade Brasileira de Cultura Japonesa e de Assistência Social</li>
+        <li>Museu da Emigração e Centro de Intercâmbio Cultural de Kobe</li>
+        <li>Instituto Moreira Salles (acervo fotográfico de Haruo Ohara)</li>
+        <li>Logan Nonfiction Program</li>
+        <li>Café Altinópolis</li>
+        <li>Maria Fumaça Campinas / Associação Brasileira de Preservação Ferroviária</li>
+        <li>Trama Fantasma</li>
+        <li>Your Podcast</li>
+        <li>MommaLaw — Müller Mazzonetto (apoio jurídico)</li>
+        <li>marmiroli comunicação (assessoria de imprensa)</li>
+        <li>REN Brasil</li>
+        <li>Embaixada do Japão no Brasil</li>
+        <li>Imago Machina</li>
+        <li>Associação Japonesa de Santos</li>
+        <li>Prefeitura de Makurazaki</li>
+        <li>JBI — Japan Business International</li>
+      </ul>
+      <div class="partner-logos">
+        <img src="assets/images/wix/logo-MI.png" alt="Museu da Imigração" class="partner-logo-img">
+        <img src="assets/images/wix/logo-MHL.png" alt="Museu Histórico de Londrina" class="partner-logo-img">
+        <img src="assets/images/wix/logo-UEL.png" alt="Universidade Estadual de Londrina" class="partner-logo-img">
+        <img src="assets/images/wix/museu-preto.png" alt="Museu Histórico da Imigração Japonesa" class="partner-logo-img">
+        <img src="assets/images/wix/logo-IMS.png" alt="Instituto Moreira Salles" class="partner-logo-img">
+        <img src="assets/images/wix/MommaLaw.png" alt="MommaLaw" class="partner-logo-img">
+        <img src="assets/images/wix/marmiroli-p.jpeg" alt="marmiroli comunicação" class="partner-logo-img">
+        <img src="assets/images/wix/logan.png" alt="Logan Nonfiction Program" class="partner-logo-img">
+        <img src="assets/images/wix/logo-trama-t.png" alt="Trama Fantasma" class="partner-logo-img">
+        <img src="assets/images/wix/yourpodcast.png" alt="Your Podcast" class="partner-logo-img">
+        <img src="assets/images/wix/bunkyo-preto.png" alt="Bunkyo" class="partner-logo-img">
+        <img src="assets/images/wix/AJS-transp.png" alt="Associação Japonesa de Santos" class="partner-logo-img">
+        <img src="assets/images/wix/JBI-logo-square-cor.png" alt="JBI Japan Business International" class="partner-logo-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="section equipe-section" id="equipe">
+    <div class="equipe-bg">
+      <img src="assets/images/wix/lupa-nihon-brasil.jpg" alt="" class="bg-img">
+    </div>
+    <div class="section-overlay equipe-overlay"></div>
+    <div class="container">
+      <h2 class="section-heading">EQUIPE</h2>
+      <div class="heading-line"></div>
+      <div class="crew-block">
+        <p class="credit-line"><strong>Direção</strong> Inara Chayamiti</p>
+        <p class="credit-line"><strong data-pt="Produzido por" data-en="Produced by">Produzido por</strong> Lorena Bondarovsky e Inara Chayamiti</p>
+        <p class="credit-line"><strong data-pt="Produção Executiva" data-en="Executive Producer">Produção Executiva</strong> João Martinho</p>
+        <p class="credit-line"><strong data-pt="Roteiro" data-en="Screenplay">Roteiro</strong> Inara Chayamiti e João Martinho</p>
+        <p class="credit-line"><strong data-pt="Montagem" data-en="Editor">Montagem</strong> Inara Chayamiti</p>
+        <p class="credit-line"><strong data-pt="Direção de Fotografia" data-en="Directors of Photography">Direção de Fotografia</strong> Inara Chayamiti e Kiyoshi Chayamiti</p>
+        <p class="credit-line"><strong data-pt="Trilha Sonora Original" data-en="Original Soundtrack">Trilha Sonora Original</strong> Pedro Sodré e Rudah Guedes</p>
+        <p class="credit-line"><strong data-pt="Mixagem e Pós-produção de Som" data-en="Sound Mixing and Post-Production">Mixagem e Pós-produção de Som</strong> Paulo Oliveira Sousa</p>
+        <p class="credit-line"><strong data-pt="Produção Local" data-en="Local Producers">Produção Local</strong> Sarah Kimura e Emília Chayamiti</p>
+        <p class="credit-line"><strong data-pt="Design Gráfico" data-en="Graphic Design">Design Gráfico</strong> Flávio Reis</p>
+        <p class="credit-line"><strong>Kintsugi</strong> Taku Nakano</p>
+        <p class="credit-line"><strong data-pt="Estratégia de Impacto" data-en="Impact Strategy">Estratégia de Impacto</strong> João Martinho</p>
+        <p class="credit-line"><strong data-pt="Produção e Distribuição de Impacto" data-en="Impact Production and Distribution">Produção e Distribuição de Impacto</strong> Inara Chayamiti</p>
+        <p class="credit-line"><strong data-pt="Assistência de Produção de Impacto" data-en="Impact Production Assistant">Assistência de Produção de Impacto</strong> Luiza de Paiva</p>
+        <p class="credit-line"><strong data-pt="Consultoria" data-en="Consultant">Consultoria</strong> Cíntia Vilani</p>
+        <p class="credit-line"><strong data-pt="Imagens aéreas" data-en="Aerial footage">Imagens aéreas</strong> Nobuhiko Nagae (Makurazaki), Toninho Torres (Altinópolis) e Lucas Mahler Assunção Valentino (Conquista)</p>
+      </div>
+
+      <div class="crew-block crew-sub">
+        <p class="crew-sub-title" data-pt="Equipe na plantação de café (Altinópolis)" data-en="Coffee plantation crew (Altinópolis)">Equipe na plantação de café (Altinópolis)</p>
+        <p class="credit-line"><strong data-pt="Direção de Fotografia" data-en="Director of Photography">Direção de Fotografia</strong> Elton Ferreira</p>
+        <p class="credit-line"><strong data-pt="Assistente de Câmera" data-en="Camera Assistant">Assistente de Câmera</strong> Laís Abbade</p>
+        <p class="credit-line"><strong data-pt="Assistente de Produção e Câmera" data-en="Production and Camera Assistant">Assistente de Produção e Câmera</strong> Sanner Moraes</p>
+        <p class="credit-line"><strong data-pt="Figurantes" data-en="Extras">Figurantes</strong> Maria Alice Sonehara, Cecília Takaara, Márcia Inazumi e Kiyoshi Chayamiti</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÍDIA -->
+  <section class="section midia-section" id="midia">
+    <div class="midia-bg">
+      <img src="assets/images/wix/nuvem-fragmento.jpeg" alt="" class="bg-img">
+    </div>
+    <div class="section-overlay midia-overlay"></div>
+    <div class="container">
+      <h2 class="section-heading">MÍDIA</h2>
+      <div class="heading-line"></div>
+      <div class="midia-grid">
+        <div class="midia-col">
+          <h4>Japão, 2022</h4>
+          <a href="https://www3.nhk.or.jp/nhkworld/" target="_blank" rel="noopener">NHK World-Japan</a>
+        </div>
+        <div class="midia-col">
+          <h4>Brasil, 2023</h4>
+          <a href="#">Conexão GloboNews</a>
+          <a href="#">SP 1 TV Globo São Paulo</a>
+          <a href="#">Folha de Londrina</a>
+          <a href="#">seLecT</a>
+          <span>A Tribuna</span>
+          <a href="#">entretetizei</a>
+          <a href="#">JT 1 TV Globo Santos</a>
+          <a href="#">CBN Londrina</a>
+          <a href="#">Diário do Litoral</a>
+          <a href="#">Portal Nippon Já</a>
+        </div>
+        <div class="midia-col">
+          <h4>Brasil, 2024</h4>
+          <a href="#">Diário Brasil Nippou</a>
+          <a href="#">Planeta Tela</a>
+          <span>NIKKEYWEB</span>
+          <a href="#">entretetizei</a>
+          <a href="#">DW Brasil</a>
+          <h4 class="mt">Japão, 2024</h4>
+          <a href="#">Asahi Shimbun</a>
+        </div>
+        <div class="midia-col">
+          <h4>Brasil, 2025</h4>
+          <a href="#">Revista Claudia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-newsletter" data-pt="Para receber novidades sobre o filme, deixe seu e-mail abaixo e siga nossas redes sociais! (:" data-en="Subscribe to our newsletter and follow our social media to get news about the film! (:">Para receber novidades sobre o filme, deixe seu e-mail abaixo e siga nossas redes sociais! (:</p>
+        <p class="footer-newsletter-en" data-lang-block="en" style="display:none;">Subscribe to our newsletter and follow our social media to get news about the film! (:</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="text" placeholder="Name | Nome" class="newsletter-input">
+          <input type="email" placeholder="E-mail" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">send | enviar</button>
+        </form>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ondeasondasquebramfilme/" target="_blank" rel="noopener">
+          <img src="assets/images/instagram-icon.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/ondeasondasquebram" target="_blank" rel="noopener">
+          <img src="assets/images/facebook-icon.png" alt="Facebook">
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2024 Onde as Ondas Quebram</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

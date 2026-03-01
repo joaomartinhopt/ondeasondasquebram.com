@@ -1,0 +1,1306 @@
+/* ========================================
+   ONDE AS ONDAS QUEBRAM — Styles
+   Faithful reproduction of original Wix site
+   ======================================== */
+
+/* --- RESET & BASE --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-heading: 'Work Sans', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --color-white: #ffffff;
+  --color-text: #e8e8e8;
+  --transition: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 200;
+  background: #0a0a0a;
+  color: var(--color-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================================
+   NAVBAR — white background, dark text (matches original)
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background: #ffffff;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 110px;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+/* Social icons — dark (original black icons) */
+.nav-social img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.75;
+  transition: opacity var(--transition);
+}
+
+.nav-social:hover img {
+  opacity: 1;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.6rem;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #333333;
+  transition: opacity var(--transition);
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  opacity: 0.55;
+}
+
+/* Language switcher */
+.lang-btn {
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color var(--transition);
+}
+
+.lang-btn.active {
+  color: #333333;
+  font-weight: 400;
+}
+
+.lang-btn:hover {
+  color: #333333;
+}
+
+.flag {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.lang-sep {
+  color: #cccccc;
+  font-size: 0.7rem;
+  margin: 0 0.2rem;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 1.5px;
+  background: #333;
+  transition: var(--transition);
+}
+
+/* ============================================================
+   HERO + RENT — single fixed ocean background (parallax)
+   Both sections share one continuous background image that
+   stays fixed while the text/content scrolls over it.
+   ============================================================ */
+
+/* Shared fixed background wrapper */
+.hero-rent-container {
+  position: relative;
+}
+
+/* The single background image — fixed so it covers both sections */
+.hero-rent-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-rent-bg .bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Light overlay over the fixed background */
+.hero-rent-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.08);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* HERO section itself */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+/* Keep .bg-img for other sections that still use it */
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Legacy (unused for hero/rent now, kept for other sections) */
+.hero-bg, .hero-overlay { display: none; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  gap: 0.4rem;
+}
+
+/* "Bonde e Chayamiti apresentam" */
+.hero-presents {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.75rem;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.90);
+  text-transform: none;
+  margin-bottom: 0.5rem;
+}
+
+/* Logo image — already white PNG, no filter needed */
+.hero-logo {
+  margin-bottom: 0.5rem;
+}
+
+.hero-logo-img {
+  width: min(430px, 62vw);
+  height: auto;
+}
+
+/* "WHERE THE WAVES BREAK" */
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.75rem;
+  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+/* "um filme de Inara Chayamiti" */
+.hero-byline {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.75rem;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.90);
+  margin-bottom: 1.2rem;
+}
+
+/* Laurels — two rows stacked */
+.hero-laurels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.laurels-img {
+  width: min(640px, 86vw);
+  height: auto;
+  opacity: 0.92;
+}
+
+/* ============================================================
+   RENT / VOD — shares fixed ocean background with hero
+   ============================================================ */
+.rent-section {
+  position: relative;
+  padding: 4rem 0 5rem;
+  z-index: 1;
+}
+
+/* Legacy — no longer used */
+.rent-bg, .rent-overlay { display: none; }
+
+.rent-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.rent-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Starburst badge — SVG scalloped shape matching original */
+.rent-starburst-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.rent-starburst {
+  position: relative;
+  width: min(430px, 82vw);
+  height: min(430px, 82vw);
+}
+
+/* SVG fills the container */
+.rent-starburst-svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* Text centred on top of the SVG */
+.rent-starburst-content {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.rent-word {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 8vw, 3.1rem); /* ~50px at 430px starburst */
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.rent-jp {
+  font-size: clamp(1.5rem, 6.5vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+/* Info below the starburst */
+.rent-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Vimeo link — inside starburst, slate-blue matching original */
+.rent-vimeo-link {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 3.8vw, 1.45rem); /* ~23px original */
+  letter-spacing: 0.01em;
+  color: #4b5676; /* rgb(75,86,118) slate blue */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 0.4rem;
+  transition: opacity var(--transition);
+}
+
+.rent-vimeo-link:hover {
+  opacity: 0.7;
+}
+
+.film-details {
+  line-height: 1.9;
+}
+
+.film-details p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.68);
+}
+
+.film-links a {
+  color: rgba(255,255,255,0.68);
+  transition: color var(--transition);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.film-links a:hover {
+  color: rgba(255,255,255,1);
+}
+
+/* Video / Vimeo on the right */
+.rent-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rent-video-frases {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+/* Vimeo review iframe for the quotes video */
+.rent-vimeo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  padding-bottom: 133%; /* portrait 3:4 ratio */
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+}
+
+.rent-vimeo-frases {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================================
+   SECTION COMMON
+   ============================================================ */
+.section {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.trailer-bg,
+.sinopse-bg,
+.exibicoes-bg,
+.impacto-bg,
+.apoio-bg,
+.equipe-bg,
+.midia-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section-heading {
+  font-family: var(--font-body);
+  font-weight: 200;
+  font-size: 2.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.heading-line {
+  width: 50px;
+  height: 1px;
+  background: var(--color-white);
+  margin: 0 auto 3rem;
+}
+
+.sub-heading {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: var(--color-white);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   TRAILER
+   ============================================================ */
+.trailer-section {
+  padding: 5rem 0;
+}
+
+.trailer-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.trailer-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.trailer-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* ============================================================
+   SINOPSE — sky blue overlay
+   ============================================================ */
+.sinopse-section {
+  padding: 5rem 0;
+}
+
+.sinopse-overlay {
+  background: rgba(200, 195, 190, 0.12);
+}
+
+.sinopse-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.92);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.sinopse-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.sinopse-text p {
+  font-size: 0.93rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 1.1rem;
+}
+
+.sinopse-text em {
+  font-style: italic;
+  color: rgba(255,255,255,0.95);
+}
+
+/* Poster carousel */
+.poster-carousel {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+#sinopse-poster-img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.6s ease;
+}
+
+#sinopse-poster-img.poster-fade {
+  opacity: 0;
+}
+
+/* ============================================================
+   EXIBIÇÕES E EVENTOS — light grey bg (rgb 232,230,230) → dark text
+   ============================================================ */
+.exibicoes-section {
+  padding: 5rem 0;
+}
+
+/* Dark text overrides — Exibições has a light background */
+.exibicoes-section .section-heading {
+  color: #2a2a2a;
+}
+.exibicoes-section .heading-line {
+  background: #2a2a2a;
+}
+.exibicoes-section .sub-heading {
+  color: #2a2a2a;
+}
+.exibicoes-section .stats-row p,
+.exibicoes-section .event-list p {
+  color: rgba(30, 30, 30, 0.82);
+}
+.exibicoes-section .event-list strong {
+  color: #1a1a1a;
+}
+.exibicoes-section .circuito-text p {
+  color: rgba(30, 30, 30, 0.78);
+}
+.exibicoes-section .debatedores {
+  color: rgba(30, 30, 30, 0.65);
+}
+.exibicoes-section .debatedores strong {
+  color: rgba(30, 30, 30, 0.85);
+}
+
+.exibicoes-overlay {
+  background: rgb(232, 230, 230);
+}
+
+.stats-row {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.stats-row p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.4rem;
+}
+
+.event-list {
+  max-width: 850px;
+  margin: 0 auto 2.5rem;
+}
+
+.event-list p {
+  font-size: 0.87rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.72);
+  padding: 0.15rem 0;
+}
+
+.event-list strong {
+  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+}
+
+/* Circuito block: text left, map right */
+.circuito-block {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  align-items: start;
+}
+
+.circuito-heading {
+  text-align: left;
+  color: #e8b4b8; /* rose/pink heading matching original */
+  font-size: 1.5rem;
+}
+
+.circuito-text p {
+  font-size: 0.87rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0.8rem;
+}
+
+.circuito-mapa img {
+  width: 100%;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Event photos */
+.events-photos {
+  margin: 0 auto 2rem;
+  max-width: 900px;
+}
+
+.events-photos img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Flyers grid */
+.flyers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+}
+
+.flyer-img {
+  width: 100%;
+  border-radius: 2px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.flyer-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.debatedores {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 0.82rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+}
+
+.debatedores strong {
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+/* ============================================================
+   IMPACTO — vintage B&W portrait background
+   ============================================================ */
+.impacto-section {
+  padding: 5rem 0;
+}
+
+.impacto-overlay {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Two-column text layout (not big number boxes) */
+.impacto-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 920px;
+  margin: 0 auto 4rem;
+}
+
+.impacto-col {
+  /* no box/border — plain text columns */
+}
+
+.impacto-cat {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 0.8rem;
+}
+
+.impacto-cat + .impacto-cat {
+  margin-top: 1.8rem;
+}
+
+.impacto-text {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 0.9rem;
+}
+
+/* Media image rows */
+.impacto-media-row {
+  margin: 2rem auto 2.5rem;
+  max-width: 900px;
+}
+
+.impacto-media-row img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Society impact cards */
+.impacto-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 920px;
+  margin: 0 auto 2.5rem;
+}
+
+.impacto-card h4 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.impacto-card p {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ============================================================
+   APOIO — dark blue-grey, original-color logos
+   ============================================================ */
+.apoio-section {
+  padding: 5rem 0;
+}
+
+.apoio-overlay {
+  background: rgba(0, 0, 0, 0.10);
+}
+
+.apoio-list {
+  list-style: disc;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.apoio-list li {
+  font-size: 0.9rem;
+  line-height: 2.1;
+  color: rgba(255,255,255,0.82);
+}
+
+.apoio-list li::marker {
+  color: rgba(255,255,255,0.45);
+}
+
+/* Partner logos — shown in original colors on grey/neutral area */
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  background: rgba(200, 200, 200, 0.18);
+  border-radius: 2px;
+}
+
+/* No color filter — show logos in their original colors */
+.partner-logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity var(--transition);
+}
+
+.partner-logo-img:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   EQUIPE — purple/mauve fabric texture
+   ============================================================ */
+.equipe-section {
+  padding: 5rem 0;
+}
+
+.equipe-overlay {
+  background: rgba(30, 10, 40, 0.22);
+}
+
+.crew-block {
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  border-left: 2px solid rgba(255,255,255,0.25);
+  padding-left: 1.5rem;
+}
+
+/* Each credit line: bold role + regular name inline */
+.credit-line {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  padding: 0.25rem 0;
+}
+
+.credit-line strong {
+  font-weight: 500;
+  color: rgba(255,255,255,0.95);
+  margin-right: 0.4rem;
+}
+
+.crew-sub {
+  margin-top: 2.5rem;
+  padding-top: 0;
+}
+
+.crew-sub-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+  padding-left: 0; /* this is inside .crew-block which already has padding */
+}
+
+/* Mídia — semi-transparent blue tint so nuvem-fragmento image shows through */
+.midia-overlay {
+  background: rgba(75, 86, 118, 0.52);
+}
+
+/* ============================================================
+   MÍDIA — cloud fragment background, solid slate blue overlay
+   ============================================================ */
+.midia-section {
+  padding: 5rem 0;
+}
+
+.midia-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.midia-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.midia-col h4 {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.midia-col h4.mt {
+  margin-top: 1.2rem;
+}
+
+.midia-col a,
+.midia-col span {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.68);
+  transition: color var(--transition);
+  line-height: 1.6;
+}
+
+.midia-col a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.midia-col a:hover {
+  color: var(--color-white);
+}
+
+/* ============================================================
+   FOOTER — steel blue-grey background
+   ============================================================ */
+.footer {
+  position: relative;
+  z-index: 1;
+  background: rgb(75, 86, 118); /* matches original footer colour */
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-newsletter {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.02em;
+  max-width: 500px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 0.55rem 1rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.82rem;
+  color: #333;
+  outline: none;
+  border-radius: 0;
+  min-width: 170px;
+  transition: border-color var(--transition);
+}
+
+.newsletter-input::placeholder {
+  color: #aaa;
+}
+
+.newsletter-input:focus {
+  border-color: rgba(255,255,255,0.9);
+}
+
+.newsletter-btn {
+  background: #e8707a;
+  border: none;
+  padding: 0.55rem 1.4rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.newsletter-btn:hover {
+  background: #d05060;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-social img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.footer-social a:hover img {
+  opacity: 1;
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.08em;
+  text-align: right;
+  padding: 0 2rem;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 968px) {
+  .sinopse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sinopse-poster {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .impacto-stats {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .impacto-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .midia-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rent-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .flyers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+  }
+
+  .circuito-block {
+    grid-template-columns: 1fr;
+  }
+
+  .circuito-mapa {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+    letter-spacing: 0.25em;
+  }
+
+  /* Navbar mobile */
+  .nav-left {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    color: #333;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+
+  .nav-right {
+    min-width: auto;
+  }
+
+  /* Hero */
+  .hero-logo-img {
+    width: min(380px, 85vw);
+  }
+
+  .hero-presents {
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-byline {
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
+  }
+
+  /* Rent — keep starburst large at mobile using vw */
+  .rent-starburst {
+    width: min(82vw, 430px);
+    height: min(82vw, 430px);
+  }
+
+  /* Flyers */
+  .flyers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  /* Equipe */
+  .crew-block {
+    max-width: 100%;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-logo-img {
+    width: min(300px, 90vw);
+  }
+
+  .laurels-img {
+    width: min(340px, 92vw);
+  }
+
+  .sinopse-lead {
+    font-size: 1.05rem;
+  }
+
+  .midia-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-input {
+    min-width: auto;
+  }
+
+  .flyers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partner-logo-img {
+    height: 38px;
+  }
+
+  .rent-starburst {
+    width: min(85vw, 380px);
+    height: min(85vw, 380px);
+  }
+}
