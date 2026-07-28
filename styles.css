@@ -631,16 +631,16 @@ a {
 }
 .exibicoes-section .stats-row p,
 .exibicoes-section .event-list p {
-  color: rgba(30, 30, 30, 0.82);
+  color: rgba(20, 20, 20, 0.92);
 }
 .exibicoes-section .event-list strong {
   color: #1a1a1a;
 }
 .exibicoes-section .circuito-text p {
-  color: rgba(30, 30, 30, 0.78);
+  color: rgba(20, 20, 20, 0.9);
 }
 .exibicoes-section .debatedores {
-  color: rgba(30, 30, 30, 0.65);
+  color: rgba(20, 20, 20, 0.8);
 }
 .exibicoes-section .debatedores strong {
   color: rgba(30, 30, 30, 0.85);
@@ -657,7 +657,7 @@ a {
 
 .stats-row p {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.04em;
   color: rgba(255,255,255,0.85);
@@ -671,6 +671,7 @@ a {
 
 .event-list p {
   font-size: 0.87rem;
+  font-weight: 400;
   line-height: 1.85;
   color: rgba(255,255,255,0.72);
   padding: 0.15rem 0;
@@ -699,6 +700,7 @@ a {
 
 .circuito-text p {
   font-size: 0.87rem;
+  font-weight: 400;
   line-height: 1.85;
   color: rgba(255,255,255,0.75);
   margin-top: 0.8rem;
@@ -887,8 +889,9 @@ a {
 
 .apoio-list li {
   font-size: 0.9rem;
+  font-weight: 400;
   line-height: 2.1;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,0.92);
 }
 
 .apoio-list li::marker {
@@ -945,8 +948,9 @@ a {
 .credit-line {
   font-family: var(--font-body);
   font-size: 0.9rem;
+  font-weight: 400;
   line-height: 1.7;
-  color: rgba(255,255,255,0.78);
+  color: rgba(255,255,255,0.9);
   padding: 0.25rem 0;
 }
 
@@ -1013,7 +1017,8 @@ a {
 .midia-col a,
 .midia-col span {
   font-size: 0.83rem;
-  color: rgba(255,255,255,0.68);
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
   transition: color var(--transition);
   line-height: 1.6;
 }
