@@ -1,1352 +1,446 @@
-/* ========================================
-   ONDE AS ONDAS QUEBRAM — Styles
-   ======================================== */
-
-/* --- RESET & BASE --- */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --font-heading: 'Work Sans', sans-serif;
-  --font-body: 'Work Sans', sans-serif;
-  --font-serif: 'Cormorant Garamond', serif;
-  --color-white: #ffffff;
-  --color-text: #e8e8e8;
-  --transition: 0.3s ease;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-body);
-  font-weight: 200;
-  background: #0a0a0a;
-  color: var(--color-text);
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
+a:hover {
+    opacity: 0.7;
 }
 
-/* ============================================================
-   NAVBAR — white background, dark text (matches original)
-   ============================================================ */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.9rem 2rem;
-  background: #ffffff;
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px 40px;
+    z-index: 1000;
 }
 
-.nav-left,
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 110px;
+.header .social-links {
+    display: flex;
+    gap: 15px;
 }
 
-.nav-right {
-  justify-content: flex-end;
+.header .social-links img {
+    width: 26px;
+    height: 26px;
 }
 
-/* Social icons — dark (original black icons) */
-.nav-social img {
-  width: 22px;
-  height: 22px;
-  opacity: 0.75;
-  transition: opacity var(--transition);
+/* Navigation */
+.navigation {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    z-index: 999;
 }
 
-.nav-social:hover img {
-  opacity: 1;
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.nav-center {
-  display: flex;
-  align-items: center;
+.navigation a {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 1.6rem;
-}
-
-.nav-link {
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #333333;
-  transition: opacity var(--transition);
-  white-space: nowrap;
-}
-
-.nav-link:hover {
-  opacity: 0.55;
-}
-
-/* Language switcher */
-.lang-btn {
-  font-size: 0.7rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  color: #999999;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  transition: color var(--transition);
-}
-
-.lang-btn.active {
-  color: #333333;
-  font-weight: 400;
-}
-
-.lang-btn:hover {
-  color: #333333;
-}
-
-.flag {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-}
-
-.lang-sep {
-  color: #cccccc;
-  font-size: 0.7rem;
-  margin: 0 0.2rem;
-}
-
-/* Hamburger */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  z-index: 1001;
-}
-
-.nav-toggle span {
-  width: 24px;
-  height: 1.5px;
-  background: #333;
-  transition: var(--transition);
-}
-
-/* ============================================================
-   HERO + RENT — single fixed ocean background (parallax)
-   Both sections share one continuous background image that
-   stays fixed while the text/content scrolls over it.
-   ============================================================ */
-
-/* Shared fixed background wrapper */
-.hero-rent-container {
-  position: relative;
-}
-
-/* The single background image — fixed so it covers both sections */
-.hero-rent-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-rent-bg .bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Light overlay over the fixed background */
-.hero-rent-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.08);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* HERO section itself */
+/* Hero Section */
 .hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 60px;
-  z-index: 1;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 100px 40px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* Keep .bg-img for other sections that still use it */
-.bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Legacy (unused for hero/rent now, kept for other sections) */
-.hero-bg, .hero-overlay { display: none; }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1.5rem;
-  gap: 0.4rem;
+    max-width: 800px;
 }
 
-/* "Bonde e Chayamiti apresentam" */
-.hero-presents {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 1.05rem;
-  letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.90);
-  text-transform: none;
-  margin-bottom: 0.3rem;
+.subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
-/* Wrapper that constrains logo + subtitle + byline to the same width */
-.hero-logo-block {
-  display: flex;
-  flex-direction: column;
-  width: min(430px, 62vw);
-  gap: 0.05rem;
+.logo-hero {
+    max-width: 600px;
+    width: 100%;
+    margin: 30px 0;
 }
 
-/* Logo image — already white PNG, no filter needed */
-.hero-logo {
-  margin-bottom: 0.15rem;
+.title-english {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 10px;
 }
 
-.hero-logo-img {
-  width: 100%; /* fills hero-logo-block width */
-  height: auto;
+.director {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 30px;
 }
 
-/* "WHERE THE WAVES BREAK" — right-aligned to logo */
-.hero-subtitle {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 1.0rem;
-  letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.85);
-  text-transform: uppercase;
-  text-align: right;
-  margin-top: 0;
+.laurels {
+    max-width: 800px;
+    width: 100%;
+    margin: 30px 0;
 }
 
-/* "um filme de Inara Chayamiti" — right-aligned to logo */
-.hero-byline {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 1.0rem;
-  letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.90);
-  text-align: right;
-  margin-bottom: 0;
-}
-
-/* Laurels — larger, tighter gap to byline */
-.hero-laurels {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  align-items: center;
-  margin-top: 0.2rem;
-}
-
-.laurels-img {
-  width: min(760px, 92vw);
-  height: auto;
-  opacity: 0.92;
-}
-
-/* ============================================================
-   RENT / VOD — shares fixed ocean background with hero
-   ============================================================ */
 .rent-section {
-  position: relative;
-  padding: 4rem 0 5rem;
-  z-index: 1;
+    margin: 40px 0;
 }
 
-/* Legacy — no longer used */
-.rent-bg, .rent-overlay { display: none; }
-
-.rent-grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+.rent-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
-.rent-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+.vimeo-link {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: underline;
 }
 
-/* Starburst badge — SVG scalloped shape matching original */
-.rent-starburst-wrap {
-  display: flex;
-  justify-content: center;
+.film-info {
+    font-size: 12px;
+    margin: 20px 0;
 }
 
-.rent-starburst {
-  position: relative;
-  width: min(430px, 82vw);
-  height: min(430px, 82vw);
+.external-links {
+    font-size: 14px;
 }
 
-/* SVG fills the container */
-.rent-starburst-svg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+.external-links a {
+    color: #fff;
+    text-decoration: underline;
 }
 
-/* Text centred on top of the SVG */
-.rent-starburst-content {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 72%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-}
-
-.rent-word {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: clamp(1.8rem, 8vw, 3.1rem); /* ~50px at 430px starburst */
-  color: #ffffff;
-  line-height: 1.1;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.rent-jp {
-  font-size: clamp(1.5rem, 6.5vw, 2.6rem);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-}
-
-/* Info below the starburst */
-.rent-info {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-/* Vimeo link — inside starburst, slate-blue matching original */
-.rent-vimeo-link {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: clamp(0.85rem, 3.8vw, 1.45rem); /* ~23px original */
-  letter-spacing: 0.01em;
-  color: #4b5676; /* rgb(75,86,118) slate blue */
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  margin-top: 0.4rem;
-  transition: opacity var(--transition);
-}
-
-.rent-vimeo-link:hover {
-  opacity: 0.7;
-}
-
-.film-details {
-  line-height: 1.9;
-}
-
-.film-details p {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.96rem;
-  letter-spacing: 0.06em;
-  color: rgba(255,255,255,0.92);
-}
-
-.film-links a {
-  color: rgba(255,255,255,0.68);
-  transition: color var(--transition);
-  font-size: 0.82rem;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.film-links a:hover {
-  color: rgba(255,255,255,1);
-}
-
-/* Video / Vimeo on the right */
-.rent-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.rent-video-frases {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 2px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-}
-
-/* Vimeo review iframe for the quotes video */
-.rent-vimeo-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 460px;
-  padding-bottom: 133%; /* portrait 3:4 ratio */
-  overflow: hidden;
-}
-
-.rent-vimeo-frases {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ============================================================
-   SECTION COMMON
-   ============================================================ */
+/* Sections */
 .section {
-  position: relative;
-  padding: 5rem 0;
-  overflow: hidden;
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.trailer-bg,
-.sinopse-bg,
-.exibicoes-bg,
-.impacto-bg,
-.apoio-bg,
-.equipe-bg,
-.midia-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+.section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
-.section-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.05);
-  z-index: 1;
+.section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 40px 0 20px;
 }
 
-.section .container {
-  position: relative;
-  z-index: 2;
+.section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 30px 0 15px;
 }
 
-.section-heading {
-  font-family: var(--font-body);
-  font-weight: 200;
-  font-size: 2.8rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--color-white);
-  text-align: center;
-  margin-bottom: 0.3rem;
+/* Trailer Section */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
 }
 
-.heading-line {
-  width: 50px;
-  height: 1px;
-  background: var(--color-white);
-  margin: 0 auto 3rem;
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.sub-heading {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.7rem;
-  color: var(--color-white);
-  text-align: center;
-  margin-bottom: 2rem;
-  letter-spacing: 0.03em;
+.section-label {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
 }
 
-/* ============================================================
-   TRAILER
-   ============================================================ */
-.trailer-section {
-  padding: 5rem 0;
+/* Sinopse Section */
+.sinopse-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
 }
 
-.trailer-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
+.sinopse-content .lead {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
-.trailer-embed {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
+.sinopse-content p {
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-.trailer-embed iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border: none;
+.posters-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
 }
 
-/* ============================================================
-   SINOPSE — sky blue overlay
-   ============================================================ */
-.sinopse-section {
-  padding: 5rem 0;
+.posters-gallery img {
+    width: 100%;
+    height: auto;
 }
 
-.sinopse-overlay {
-  background: rgba(12, 18, 40, 0.62);
+/* Exibições Section */
+.stats {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-.sinopse-lead {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.92);
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
+.eventos-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.sinopse-grid {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 3rem;
-  align-items: start;
+.eventos-list {
+    list-style: none;
+    margin-bottom: 40px;
 }
 
-.sinopse-text p {
-  font-size: 0.93rem;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.93);
-  margin-bottom: 1.1rem;
+.eventos-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 1.8;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-.sinopse-text em {
-  font-style: italic;
-  color: rgba(255,255,255,0.95);
+/* Impacto Section */
+.impacto-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* Poster carousel */
-.poster-carousel {
-  position: relative;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+.impact-item {
+    margin-bottom: 40px;
 }
 
-#sinopse-poster-img {
-  width: 100%;
-  display: block;
-  transition: opacity 0.6s ease;
+.impact-item h4 {
+    color: #000;
+    font-weight: 700;
 }
 
-#sinopse-poster-img.poster-fade {
-  opacity: 0;
+.impact-item p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-/* ============================================================
-   EXIBIÇÕES E EVENTOS — light grey bg (rgb 232,230,230) → dark text
-   ============================================================ */
-.exibicoes-section {
-  padding: 5rem 0;
-}
-
-/* Dark text overrides — Exibições has a light background */
-.exibicoes-section .section-heading {
-  color: #2a2a2a;
-}
-.exibicoes-section .heading-line {
-  background: #2a2a2a;
-}
-.exibicoes-section .sub-heading {
-  color: #2a2a2a;
-}
-.exibicoes-section .stats-row p,
-.exibicoes-section .event-list p {
-  color: rgba(30, 30, 30, 0.82);
-}
-.exibicoes-section .event-list strong {
-  color: #1a1a1a;
-}
-.exibicoes-section .circuito-text p {
-  color: rgba(30, 30, 30, 0.78);
-}
-.exibicoes-section .debatedores {
-  color: rgba(30, 30, 30, 0.65);
-}
-.exibicoes-section .debatedores strong {
-  color: rgba(30, 30, 30, 0.85);
-}
-
-.exibicoes-overlay {
-  background: rgb(232, 230, 230);
-}
-
-.stats-row {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.stats-row p {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 0.4rem;
-}
-
-.event-list {
-  max-width: 850px;
-  margin: 0 auto 2.5rem;
-}
-
-.event-list p {
-  font-size: 0.87rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.72);
-  padding: 0.15rem 0;
-}
-
-.event-list strong {
-  color: rgba(255,255,255,0.95);
-  font-weight: 500;
-}
-
-/* Circuito block: text left, map right */
-.circuito-block {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 2.5rem;
-  max-width: 900px;
-  margin: 0 auto 2.5rem;
-  align-items: start;
-}
-
-.circuito-heading {
-  text-align: left;
-  color: #e8b4b8; /* rose/pink heading matching original */
-  font-size: 1.5rem;
-}
-
-.circuito-text p {
-  font-size: 0.87rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.75);
-  margin-top: 0.8rem;
-}
-
-.circuito-mapa img {
-  width: 100%;
-  border-radius: 2px;
-  opacity: 0.9;
-}
-
-/* Event photos — stacked images, no borders */
-.events-photos {
-  margin: 0 auto 2rem;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.events-photos img {
-  width: 100%;
-  display: block;
-}
-
-/* Smaller standalone photo (the PNG) — auto-size, centered */
-.events-photo-small {
-  width: auto !important;
-  max-width: 60%;
-  align-self: center;
-}
-
-/* Flyers grid */
-.flyers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  max-width: 900px;
-  margin: 0 auto 2.5rem;
-}
-
-.flyer-img {
-  width: 100%;
-  border-radius: 2px;
-  transition: transform var(--transition), box-shadow var(--transition);
-  cursor: pointer;
-}
-
-.flyer-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-}
-
-.debatedores {
-  max-width: 850px;
-  margin: 0 auto;
-  font-size: 0.82rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-}
-
-.debatedores strong {
-  color: rgba(255,255,255,0.85);
-  font-weight: 500;
-}
-
-/* ============================================================
-   IMPACTO — vintage B&W portrait background
-   ============================================================ */
-.impacto-section {
-  padding: 5rem 0;
-}
-
-.impacto-overlay {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* Two-column text layout (not big number boxes) */
-.impacto-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 920px;
-  margin: 0 auto 4rem;
-}
-
-.impacto-col {
-  /* no box/border — plain text columns */
-}
-
-.impacto-cat {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: rgba(255,255,255,0.92);
-  margin-bottom: 0.8rem;
-}
-
-.impacto-cat + .impacto-cat {
-  margin-top: 1.8rem;
-}
-
-.impacto-text {
-  font-size: 0.9rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,1);
-  margin-bottom: 0.9rem;
-}
-
-/* Media image rows */
-.impacto-media-row {
-  margin: 2rem auto 2.5rem;
-  max-width: 900px;
-}
-
-.impacto-media-row img {
-  width: 100%;
-}
-
-/* Three society images side by side, proportional to natural widths 242:602:642 */
-.impacto-society-imgs {
-  display: flex;
-  gap: 0.3rem;
-  max-width: 860px;
-  margin: 2.5rem auto 0;
-  align-items: flex-start;
-}
-
-.impacto-society-imgs img {
-  display: block;
-  height: auto;
-  min-width: 0;
-}
-
-.impacto-society-imgs img:nth-child(1) { flex: 242 1 0%; }
-.impacto-society-imgs img:nth-child(2) { flex: 602 1 0%; }
-.impacto-society-imgs img:nth-child(3) { flex: 642 1 0%; }
-
-/* Society impact cards */
-.impacto-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  max-width: 920px;
-  margin: 0 auto 2.5rem;
-}
-
-.impacto-card h4 {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-}
-
-.impacto-card p {
-  font-size: 0.85rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.65);
-}
-
-/* ============================================================
-   APOIO — dark blue-grey, original-color logos
-   ============================================================ */
-.apoio-section {
-  padding: 5rem 0;
-}
-
-.apoio-overlay {
-  background: rgba(0, 0, 0, 0.10);
-}
-
-.apoio-list {
-  list-style: disc;
-  max-width: 680px;
-  margin: 0 auto 3.5rem;
-  padding-left: 1.5rem;
-  text-align: left;
+/* Apoio Section */
+.apoio-list ul {
+    list-style: none;
+    columns: 2;
+    column-gap: 40px;
 }
 
 .apoio-list li {
-  font-size: 0.9rem;
-  line-height: 2.1;
-  color: rgba(255,255,255,0.82);
+    padding: 8px 0;
+    line-height: 1.6;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-.apoio-list li::marker {
-  color: rgba(255,255,255,0.45);
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    align-items: center;
 }
 
-/* Partner logos — shown in original colors on grey/neutral area */
-.partner-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-  background: rgba(200, 200, 200, 0.18);
-  border-radius: 2px;
+.logos-grid img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 }
 
-/* No color filter — show logos in their original colors */
-.partner-logo-img {
-  height: 50px;
-  width: auto;
-  max-width: 130px;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: opacity var(--transition);
+.logos-grid img:hover {
+    filter: grayscale(0%);
 }
 
-.partner-logo-img:hover {
-  opacity: 1;
+/* Equipe Section */
+.equipe-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* ============================================================
-   EQUIPE — purple/mauve fabric texture
-   ============================================================ */
-.equipe-section {
-  padding: 5rem 0;
+.equipe-content p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-.equipe-overlay {
-  background: rgba(30, 10, 40, 0.22);
+/* Mídia Section */
+.midia-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.crew-block {
-  max-width: 620px;
-  margin: 0 auto 2rem;
-  border-left: 2px solid rgba(255,255,255,0.25);
-  padding-left: 1.5rem;
+.midia-content ul {
+    list-style: none;
+    margin-bottom: 30px;
 }
 
-/* Each credit line: bold role + regular name inline */
-.credit-line {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.78);
-  padding: 0.25rem 0;
+.midia-content li {
+    padding: 8px 0;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-.credit-line strong {
-  font-weight: 500;
-  color: rgba(255,255,255,0.95);
-  margin-right: 0.4rem;
+.midia-content a {
+    text-decoration: underline;
 }
 
-.crew-sub {
-  margin-top: 2.5rem;
-  padding-top: 0;
+/* Newsletter Section */
+.newsletter-section {
+    background: #f5f5f5;
+    padding: 60px 40px;
+    text-align: center;
 }
 
-.crew-sub-title {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 1rem;
-  padding-left: 0; /* this is inside .crew-block which already has padding */
-}
-
-/* Mídia — semi-transparent blue tint so nuvem-fragmento image shows through */
-.midia-overlay {
-  background: rgba(75, 86, 118, 0.52);
-}
-
-/* ============================================================
-   MÍDIA — cloud fragment background, solid slate blue overlay
-   ============================================================ */
-.midia-section {
-  padding: 5rem 0;
-}
-
-.midia-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.midia-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.midia-col h4 {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  color: var(--color-white);
-  margin-bottom: 0.3rem;
-  text-transform: uppercase;
-}
-
-.midia-col h4.mt {
-  margin-top: 1.2rem;
-}
-
-.midia-col a,
-.midia-col span {
-  font-size: 0.83rem;
-  color: rgba(255,255,255,0.68);
-  transition: color var(--transition);
-  line-height: 1.6;
-}
-
-.midia-col a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.midia-col a:hover {
-  color: var(--color-white);
-}
-
-/* ============================================================
-   FOOTER — steel blue-grey background
-   ============================================================ */
-.footer {
-  position: relative;
-  z-index: 1;
-  background: rgb(75, 86, 118); /* matches original footer colour */
-  padding: 3rem 0 1.5rem;
-}
-
-.footer-inner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.footer-newsletter {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.02em;
-  max-width: 500px;
+.newsletter-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .newsletter-form {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.newsletter-input {
-  background: #ffffff;
-  border: 1px solid rgba(255,255,255,0.6);
-  padding: 0.55rem 1rem;
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 0.82rem;
-  color: #333;
-  outline: none;
-  border-radius: 0;
-  min-width: 170px;
-  transition: border-color var(--transition);
-}
-
-.newsletter-input::placeholder {
-  color: #aaa;
-}
-
-.newsletter-input:focus {
-  border-color: rgba(255,255,255,0.9);
-}
-
-.newsletter-btn {
-  background: #e8707a;
-  border: none;
-  padding: 0.55rem 1.4rem;
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background var(--transition);
-}
-
-.newsletter-btn:hover {
-  background: #d05060;
-}
-
-.footer-social {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.footer-social img {
-  width: 26px;
-  height: 26px;
-  opacity: 0.85;
-  transition: opacity var(--transition);
-}
-
-.footer-social a:hover img {
-  opacity: 1;
-}
-
-.footer-copy {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.08em;
-  text-align: right;
-  padding: 0 2rem;
-}
-
-.footer-mailto {
-  color: rgba(255,255,255,0.65);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color var(--transition);
-}
-
-.footer-mailto:hover {
-  color: rgba(255,255,255,0.95);
-}
-
-/* ============================================================
-   ANIMATIONS
-   ============================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 968px) {
-  .sinopse-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sinopse-poster {
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  .impacto-stats {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .impacto-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .midia-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .rent-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .flyers-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.7rem;
-  }
-
-  .circuito-block {
-    grid-template-columns: 1fr;
-  }
-
-  .circuito-mapa {
-    max-width: 260px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 3.5rem 0;
-  }
-
-  .section-heading {
-    font-size: 1.8rem;
-    letter-spacing: 0.25em;
-  }
-
-  /* Navbar mobile */
-  .nav-left {
-    display: none;
-  }
-
-  .nav-toggle {
+    max-width: 500px;
+    margin: 30px auto;
     display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100vh;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.8rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition), visibility var(--transition);
-  }
-
-  .nav-menu.open {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-    letter-spacing: 0.25em;
-    color: #333;
-  }
-
-  .nav-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
-  }
-  .nav-toggle.open span:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
-  }
-
-  .nav-right {
-    min-width: auto;
-  }
-
-  /* Hero */
-  .hero-logo-block {
-    width: min(380px, 85vw);
-  }
-
-  .hero-presents {
-    font-size: 0.88rem;
-    letter-spacing: 0.08em;
-  }
-
-  .hero-subtitle {
-    font-size: 0.85rem;
-  }
-
-  .hero-byline {
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-  }
-
-  /* Rent — keep starburst large at mobile using vw */
-  .rent-starburst {
-    width: min(82vw, 430px);
-    height: min(82vw, 430px);
-  }
-
-  /* Flyers */
-  .flyers-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-
-  /* Equipe */
-  .crew-block {
-    max-width: 100%;
-  }
-
-  /* Footer */
-  .footer-inner {
-    flex-direction: column;
-  }
+    gap: 10px;
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 1.2rem;
-  }
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
 
-  .section-heading {
-    font-size: 1.5rem;
-    letter-spacing: 0.2em;
-  }
+.newsletter-form button {
+    padding: 12px 30px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: lowercase;
+    transition: background 0.3s ease;
+}
 
-  .hero-logo-block {
-    width: min(300px, 90vw);
-  }
+.newsletter-form button:hover {
+    background: #333;
+}
 
-  .laurels-img {
-    width: min(360px, 94vw);
-  }
+/* Footer */
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
 
-  .sinopse-lead {
-    font-size: 1.05rem;
-  }
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
 
-  .midia-grid {
-    grid-template-columns: 1fr;
-  }
+.footer .social-links img {
+    width: 26px;
+    height: 26px;
+    filter: brightness(0) invert(1);
+}
 
-  .newsletter-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
+.footer p {
+    font-size: 12px;
+}
 
-  .newsletter-input {
-    min-width: auto;
-  }
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navigation ul {
+        gap: 15px;
+        padding: 0 20px;
+    }
 
-  .flyers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .navigation a {
+        font-size: 10px;
+    }
 
-  .partner-logo-img {
-    height: 38px;
-  }
+    .hero {
+        padding: 80px 20px;
+    }
 
-  .rent-starburst {
-    width: min(85vw, 380px);
-    height: min(85vw, 380px);
-  }
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .apoio-list ul {
+        columns: 1;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .posters-gallery {
+        grid-template-columns: 1fr;
+    }
 }
