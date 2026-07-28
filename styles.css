@@ -774,7 +774,7 @@ a {
 }
 
 .impacto-overlay {
-  background: rgba(255, 255, 255, 0.12);
+ background: rgba(0, 0, 0, 0.30);
 }
 
 /* Two-column text layout (not big number boxes) */
@@ -805,8 +805,9 @@ a {
 
 .impacto-text {
   font-size: 0.9rem;
+  font-weight: 400;
   line-height: 1.85;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.92);
   margin-bottom: 0.9rem;
 }
 
@@ -860,8 +861,9 @@ a {
 
 .impacto-card p {
   font-size: 0.85rem;
+  font-weight: 400;
   line-height: 1.85;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.9);
 }
 
 /* ============================================================
