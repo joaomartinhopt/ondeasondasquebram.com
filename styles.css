@@ -1,6 +1,5 @@
 /* ========================================
    ONDE AS ONDAS QUEBRAM — Styles
-   Faithful reproduction of original Wix site
    ======================================== */
 
 /* --- RESET & BASE --- */
@@ -711,7 +710,7 @@ a {
   opacity: 0.9;
 }
 
-/* Event photos — stacked Wix images, no borders */
+/* Event photos — stacked images, no borders */
 .events-photos {
   margin: 0 auto 2rem;
   max-width: 900px;
@@ -807,7 +806,7 @@ a {
 .impacto-text {
   font-size: 0.9rem;
   line-height: 1.85;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,1);
   margin-bottom: 0.9rem;
 }
 
