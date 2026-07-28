@@ -560,16 +560,16 @@ a {
 }
 
 .sinopse-overlay {
-  background: rgba(12, 18, 40, 0.45);
+  background: rgba(12, 18, 40, 0.35);
 }
 
 .sinopse-lead {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.85;
-  color: rgba(255,255,255,0.92);
+  color: rgba(225,225,232,0.95);
   text-align: center;
   max-width: 800px;
   margin: 0 auto 3rem;
@@ -584,8 +584,9 @@ a {
 
 .sinopse-text p {
   font-size: 0.93rem;
+  font-weight: 500;
   line-height: 1.9;
-  color: rgba(255,255,255,0.93);
+  color: rgba(225,225,232,0.95);
   margin-bottom: 1.1rem;
 }
 
